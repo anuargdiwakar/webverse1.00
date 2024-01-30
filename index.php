@@ -1,4 +1,43 @@
+<?php 
+if(isset($_POST['submit']))
+{
+        //if($_POST['security_code']==$_SESSION['security_code'])
+	 //{
+$date1 = time();
+$date2 = date("Y-m-d", $date1);
+$name = $_POST["name"];
+	$email = $_POST["email"];
+	$mobile = $_POST["mobileno"];
 
+
+
+$to = "mohdim9839@gmail.com"; //to address
+$message = "<b>Request By Name: </b>".$name."
+<br/><br/><b>Email Id: </b>".$email."<br/><br/>
+<b>Mobile Number:</b>  ".$mobile;
+$subject = "Quick Contact Detail From Website on " .$date2;
+
+$headers  = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+$headers .= 'Bcc: anuragdiwakar5@gmail.com'. "\r\n";
+$headers .= 'From: QuickContact<info@webverse.org>' . "\r\n"; //from address
+
+		if (mail($to, $subject, $message, $headers) )
+		//if($far)
+		{
+			echo "<script>alert('Your request has been sent successfully. We Will Contact you soon.');
+	        window.location.href = 'index.php';</script>";
+		}
+		else
+		{
+		    echo "<script>alert('Something went Wrong. Try again..');
+	        window.location.href = 'trps.php';</script>";
+		}
+
+
+
+}
+?>
 <!DOCTYPE html>
 <html  >
 <head>
@@ -24,6 +63,8 @@
   <link rel="stylesheet" href="assets/socicon/css/styles.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/recaptcha.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css" integrity="sha512-8RxmFOVaKQe/xtg6lbscU9DU0IRhURWEuiI0tXevv+lXbAHfkpamD4VKFQRto9WgfOJDwOZ74c/s9Yesv3VvIQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="preload" href="https://fonts.googleapis.com/css?family=Anybody:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anybody:100,200,300,400,500,600,700,800,900,100i,200i,300i,400i,500i,600i,700i,800i,900i&display=swap"></noscript>
   <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
@@ -67,6 +108,12 @@
                 </ul>
                 
                 <div class="navbar-buttons mbr-section-btn"><a class="btn btn-black display-4" href="index.html">GET<br>STARTED<br></a></div>
+                <div class="navbar-buttons mbr-section-btn"><a class="btn btn-black display-4"  href="https://translate.google.com/website?sl=en&amp;tl=hi&amp;hl=hi&amp;client=srp&amp;u=https://api.whatsapp.com/send?phone%3D918429662388%26text%3DHi%2520..." target="_blank"><i class="fa-brands fa-whatsapp"></i></a></div>
+
+
+
+
+
             </div>
         </div>
     </nav>
@@ -97,7 +144,7 @@
                               <P class="mbr-text mbr-fonts-style display-7">100% RESPONSIVE + SEO FRIENDLY WEBSITE</P>
                 <div class="mbr-section-btn mt-3"><a class="btn btn-lg btn-white-outline display-4" href="index.html"><span>Get Started</span></a> <a class="btn btn-lg btn-white display-4" href="index.html"><span>Read More</span></a></div>
                 <div class="d-flex pt-5">
-                    <div class="dot"></div>
+                    <div class="#"></div>
                     <div class="#"></div>
                 </div>
             </div>
@@ -257,7 +304,7 @@
                     <div class="# "></div>
                 </div>
                 <div class="card">
-                    <img src="assets/images/team1.jpg" alt="Mobirise Website Builder">
+                    <img src="assets/images/Untitled design (1).png" alt=" Website Builder">
 
                 </div>
                 <div class="d-flex">
@@ -267,9 +314,9 @@
 
 
 
-                <p class="mbr-section-text mbr-fonts-style align-center mb-0 mt-3 display-5">Daryl Rowe<br></p>
+                <p class="mbr-section-text mbr-fonts-style align-center mb-0 mt-3 display-5">Anurag Diwakar<br></p>
 
-                <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 display-7">DEVELOPER</h4>
+                <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 display-7">WEB DESIGNER</h4>
 
             </div>
             <div class="col-md-3 col-lg-3 col-md-6 mb-4">
@@ -279,16 +326,16 @@
                 </div>
 
                 <div class="card">
-                    <img src="assets/images/team2.jpg" alt="Mobirise Website Builder">
+                    <img src="assets/images/Untitled design (2).png" alt=" Website Builder">
 
                 </div>
                 <div class="d-flex">
                     <div class="#"></div>
                     <div class="# "></div>
                 </div>
-                <p class="mbr-section-text mbr-fonts-style align-center mb-0 mt-3 display-5">Justin Treiber</p>
+                <p class="mbr-section-text mbr-fonts-style align-center mb-0 mt-3 display-5">Mohd. IMRAN</p>
 
-                <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 display-7">DEVELOPER</h4>
+                <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 display-7"> WEB DEVELOPER</h4>
             </div>
             <div class="col-md-3 col-lg-3 col-md-6 mb-4">
                 <div class="d-flex">
@@ -345,18 +392,19 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-md-3 col-lg-4 col-md-6">
-                <div class="d-flex">
+               <!-- <div class="d-flex">
                     <div class="#"></div>
                     <div class="# "></div>
-                </div>
+                </div>-->
                 <div class="card">
-                    <img src="assets/images/1.png" alt="Mobirise Website Builder">
+                    <a href="http://vidwaan.co.in/" target="_blank"></a>
+                    <img src="assets/images/VIDWAAN.png" alt=" Website Builder">
 
                 </div>
-                <div class="d-flex">
+               <!-- <div class="d-flex">
                     <div class="#"></div>
                     <div class="# "></div>
-                </div>
+                </div>-->
 
 
 
@@ -373,31 +421,33 @@
                 </div>
 
                 <div class="card">
-                    <img src="assets/images/2.png" alt="Mobirise Website Builder">
+                    <a href="http://artiboutiquecollection/" target="_blank"></a>
+                    <img src="assets/images/Arti botique.png" alt="arti boutique website">
 
                 </div>
-                <div class="d-flex">
+                <!--<div class="d-flex">
                     <div class="#"></div>
                     <div class="# "></div>
-                </div>
+                </div>-->
                 <p class="mbr-section-text mbr-fonts-style align-center mb-0 mt-3 display-4">Lorem ipsum dolor sit amet, consectetur adipiscing. Vivamus
                     consequat odio elit.</p>
 
                 <h4 class="mbr-section-subtitle mbr-fonts-style align-center mb-0 mt-3 display-7"><a href="index.html">Read more</a></h4>
             </div>
             <div class="col-md-3 col-lg-4 col-md-6">
-                <div class="d-flex">
+                <!--<div class="d-flex">
                     <div class="#"></div>
                     <div class="# "></div>
-                </div>
+                </div>-->
                 <div class="card">
-                    <img src="assets/images/3.png" alt="Mobirise Website Builder">
+                    <a href="http://spslko.co.in/" target="_blank"></a>
+                    <img src="assets/images/VIDWAAN (1).png" alt="sps school Website Builder">
 
                 </div>
-                <div class="d-flex">
+               <!-- <div class="d-flex">
                     <div class="#"></div>
                     <div class="# "></div>
-                </div>
+                </div>-->
                 <p class="mbr-section-text mbr-fonts-style align-center mb-0 mt-3 display-4">Lorem ipsum dolor sit amet, consectetur adipiscing. Vivamus
                     consequat odio elit.</p>
 
@@ -710,7 +760,7 @@
             </div>
             <div class="col-lg-6 mx-auto mbr-form" data-form-type="formoid">
                 <!--Formbuilder Form-->
-                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="gf1c9O2O2xfFlUBcM+a2o5jnJXa+jdg7MTnmsJgLe85NoTZ5OVWqaT0cgZ+n9aM6GcRf0jar92b/mRXLx8agl3mN2iNIEkXA4bgr69ED2d0rdAD7hXkndHpbYrmZfgdo.rLSJwMBXgSNVkxnoB8T9gnt+IwFgxrV9l37WW6cn0UBLxMxvZOoynkN0OhdsxzpX814IFkes2mJWQ9gJzrBGmXzfwPOFEFJ+kGt1yWNnHXLSLqEKtQUSQR9wCd5EZaKR">
+                <form action="https://#/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
                     <div class="row">
                         <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out
                             the form!</div>
@@ -719,18 +769,18 @@
                     </div>
                     <div class="dragArea row">
                         <div class="col-lg-6 col-md-12 col-sm-12 form-group mb-3" data-for="name">
-                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control display-7" value="" id="name-form01-8">
+                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control display-7" value=""name="name" id="name-form01-8">
                         </div>
                         <div class="col-lg-6 col-md-12 col-sm-12 form-group mb-3" data-for="email">
-                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control display-7" value="" id="email-form01-8">
+                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control display-7" value="" name="email" id="email-form01-8">
                         </div>
                         <div data-for="phone" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <input type="tel" name="phone" placeholder="Phone" data-form-field="phone" class="form-control display-7" pattern="*" value="" id="phone-form01-8">
+                            <input type="tel" name="phone" placeholder="Phone" data-form-field="phone" name="mobileno" class="form-control display-7" pattern="*" value="" id="phone-form01-8">
                         </div>
                         <div data-for="message" class="col-lg-12 col-md-12 col-sm-12 form-group mb-3">
-                            <textarea name="message" placeholder="Message" data-form-field="message" class="form-control display-7" id="message-form01-8"></textarea>
+                            <textarea name="message" placeholder="Message" data-form-field="message" name="message" class="form-control display-7" id="message-form01-8"></textarea>
                         </div>
-                        <div class="col-auto m-auto"><button type="submit" class="w-100 btn btn-white-outline display-7">SEND MESSAGE</button>
+                        <div class="col-auto m-auto"><button type="submit" name="submit" class="w-100 btn btn-white-outline display-7">SEND MESSAGE</button>
                         </div>
                     </div>
                 </form>
